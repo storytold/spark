@@ -10,6 +10,7 @@ permissions:
   contents: read
 jobs:
   test:
+    timeout-minutes: 60
     name: spark
     runs-on: windows-latest
     strategy:
