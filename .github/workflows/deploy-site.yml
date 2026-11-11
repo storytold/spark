@@ -35,13 +35,13 @@ jobs:
 
       - name: Generate GitHub App token
         id: generate-token
-        uses: tibdex/github-app-token@v2
+        uses: step-security/github-app-token@9c6774f939bc4b39dbaa78ad6ea7e7352a844e37 # v2.1.0
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Deploy to site gh-pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: step-security/actions-gh-pages@1ff395e0ea299d67210bc800e606c1c7f000bbd2 # v4.1.0
         with:
           external_repository: sparkjsdev/sparkjsdev.github.io
           publish_branch: main
