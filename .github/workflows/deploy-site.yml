@@ -13,14 +13,14 @@ jobs:
 
     steps:
       - name: Harden runner
-        uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+        uses: step-security/harden-runner@v2.22.4
         with:
           egress-policy: audit
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.4.0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.4.0
         with:
           node-version: '22.x'
 
@@ -35,13 +35,13 @@ jobs:
 
       - name: Generate GitHub App token
         id: generate-token
-        uses: step-security/github-app-token@9c6774f939bc4b39dbaa78ad6ea7e7352a844e37 # v2.1.0
+        uses: step-security/github-app-token@v2.1.0
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Deploy to site gh-pages
-        uses: step-security/actions-gh-pages@1ff395e0ea299d67210bc800e606c1c7f000bbd2 # v4.1.0
+        uses: step-security/actions-gh-pages@v4.1.0
         with:
           external_repository: sparkjsdev/sparkjsdev.github.io
           publish_branch: main
